@@ -1,0 +1,51 @@
+patient_id,churn_risk_score,churn_risk_tier,treatment_goal,testosterone_tier,age_group,days_to_first_lab,engagement_score_day7,recommended_action
+P000480,0.7045,High,General Wellness,Borderline,35-44,44,1.3,Send personalized care-team check-in immediately
+P000104,0.6869,High,Libido,Borderline,25-34,52,1.8,Send personalized care-team check-in immediately
+P000250,0.6368,High,Libido,Borderline,45-54,26,0.8,Send personalized care-team check-in immediately
+P000025,0.6318,High,Energy,Borderline,35-44,20,0.3,Send personalized care-team check-in immediately
+P000840,0.6056,High,Energy,Borderline,45-54,5,0.4,Send personalized care-team check-in immediately
+P000933,0.596,High,Energy,Borderline,35-44,32,1.2,Send personalized care-team check-in immediately
+P000891,0.5958,High,Energy,Borderline,25-34,28,1.3,Send personalized care-team check-in immediately
+P001474,0.5936,High,Energy,Borderline,55-65,5,0.5,Send personalized care-team check-in immediately
+P001677,0.5928,High,Libido,Borderline,45-54,11,0.2,Send personalized care-team check-in immediately
+P000019,0.5753,High,Energy,Borderline,45-54,6,1.0,Send personalized care-team check-in immediately
+P001152,0.5691,High,Libido,Borderline,45-54,27,1.6,Send personalized care-team check-in immediately
+P000653,0.5656,High,Energy,Borderline,35-44,4,0.3,Send personalized care-team check-in immediately
+P001968,0.5652,High,Energy,Borderline,25-34,25,3.2,Prioritize lab completion reminder
+P000231,0.5634,High,Energy,Borderline,35-44,30,1.4,Send personalized care-team check-in immediately
+P001398,0.5631,High,Energy,Borderline,45-54,18,1.8,Send personalized care-team check-in immediately
+P001416,0.5584,High,Body Composition,Borderline,35-44,27,1.6,Send personalized care-team check-in immediately
+P001873,0.5575,High,Energy,Borderline,35-44,10,1.6,Send personalized care-team check-in immediately
+P001514,0.5507,High,Body Composition,Borderline,45-54,18,1.0,Send personalized care-team check-in immediately
+P000528,0.5409,Medium,Libido,Borderline,35-44,29,1.7,Send automated educational message at day 14
+P001498,0.5407,Medium,Energy,Borderline,55-65,25,3.2,Send automated educational message at day 14
+P001240,0.5382,Medium,Energy,Borderline,35-44,17,1.8,Send automated educational message at day 14
+P000479,0.5229,Medium,Body Composition,Borderline,35-44,19,1.0,Send automated educational message at day 14
+P000389,0.5192,Medium,Body Composition,Low-Normal,35-44,54,2.9,Send automated educational message at day 14
+P000236,0.5179,Medium,Body Composition,Borderline,45-54,10,1.1,Send automated educational message at day 14
+P001994,0.5162,Medium,Energy,Borderline,35-44,3,0.7,Send automated educational message at day 14
+P001582,0.5127,Medium,General Wellness,Low,45-54,32,1.3,Send automated educational message at day 14
+P001309,0.5083,Medium,Libido,Borderline,45-54,16,1.2,Send automated educational message at day 14
+P000298,0.4978,Medium,Body Composition,Borderline,35-44,26,2.6,Send automated educational message at day 14
+P001290,0.4954,Medium,Energy,Borderline,35-44,1,0.9,Send automated educational message at day 14
+P001239,0.4953,Medium,Libido,Borderline,25-34,49,4.6,Send automated educational message at day 14
+P000741,0.495,Medium,Body Composition,Borderline,45-54,37,2.3,Send automated educational message at day 14
+P000110,0.4857,Medium,Energy,Low-Normal,35-44,12,0.7,Send automated educational message at day 14
+P001363,0.4832,Medium,Libido,Borderline,25-34,25,2.7,Send automated educational message at day 14
+P000137,0.4819,Medium,Energy,Low-Normal,35-44,25,2.3,Send automated educational message at day 14
+P000303,0.4818,Medium,Energy,Borderline,35-44,13,2.3,Send automated educational message at day 14
+P001592,0.4793,Medium,Energy,Borderline,45-54,8,2.7,Send automated educational message at day 14
+P001803,0.4765,Medium,Libido,Low-Normal,25-34,30,1.8,Send automated educational message at day 14
+P000331,0.4698,Medium,Energy,Borderline,35-44,4,1.0,Send automated educational message at day 14
+P001984,0.4646,Medium,Energy,Low-Normal,35-44,32,2.9,Send automated educational message at day 14
+P001034,0.4616,Medium,Energy,Low-Normal,35-44,24,1.8,Send automated educational message at day 14
+P000617,0.4598,Medium,Body Composition,Borderline,35-44,12,2.1,Send automated educational message at day 14
+P001358,0.4595,Medium,Body Composition,Borderline,35-44,5,0.6,Send automated educational message at day 14
+P001091,0.4588,Medium,Body Composition,Borderline,35-44,13,1.9,Send automated educational message at day 14
+P001143,0.4574,Medium,Energy,Borderline,25-34,13,3.3,Send automated educational message at day 14
+P000521,0.4567,Medium,Energy,Borderline,35-44,35,1.5,Send automated educational message at day 14
+P001518,0.4564,Medium,Energy,Borderline,45-54,13,2.5,Send automated educational message at day 14
+P001830,0.4542,Medium,Energy,Low-Normal,45-54,48,2.4,Send automated educational message at day 14
+P000242,0.4536,Medium,Body Composition,Low-Normal,35-44,30,1.0,Send automated educational message at day 14
+P000412,0.4535,Medium,Body Composition,Borderline,45-54,8,1.3,Send automated educational message at day 14
+P000723,0.452,Medium,General Wellness,Borderline,35-44,12,1.4,Send automated educational message at day 14

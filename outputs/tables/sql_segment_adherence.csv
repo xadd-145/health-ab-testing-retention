@@ -1,0 +1,33 @@
+age_group,treatment_goal,experiment_arm,patient_count,adherence_rate_90d
+25-34,Body Composition,Control,81,0.5309
+25-34,Body Composition,Treatment,80,0.5625
+25-34,Energy,Control,122,0.5328
+25-34,Energy,Treatment,123,0.6423
+25-34,General Wellness,Control,37,0.6216
+25-34,General Wellness,Treatment,37,0.5676
+25-34,Libido,Control,101,0.4752
+25-34,Libido,Treatment,100,0.64
+35-44,Body Composition,Control,99,0.5354
+35-44,Body Composition,Treatment,99,0.5556
+35-44,Energy,Control,148,0.5405
+35-44,Energy,Treatment,148,0.723
+35-44,General Wellness,Control,42,0.4762
+35-44,General Wellness,Treatment,42,0.619
+35-44,Libido,Control,133,0.4662
+35-44,Libido,Treatment,133,0.6466
+45-54,Body Composition,Control,56,0.5536
+45-54,Body Composition,Treatment,57,0.5263
+45-54,Energy,Control,64,0.5938
+45-54,Energy,Treatment,63,0.6349
+45-54,General Wellness,Control,21,0.5714
+45-54,General Wellness,Treatment,21,0.5714
+45-54,Libido,Control,60,0.5333
+45-54,Libido,Treatment,60,0.5833
+55-65,Body Composition,Control,11,0.5455
+55-65,Body Composition,Treatment,12,0.6667
+55-65,Energy,Control,7,0.7143
+55-65,Energy,Treatment,7,0.8571
+55-65,General Wellness,Control,4,0.25
+55-65,General Wellness,Treatment,3,0.6667
+55-65,Libido,Control,14,0.7143
+55-65,Libido,Treatment,15,0.6667

@@ -1,0 +1,2 @@
+baseline_rate,treatment_rate_for_mde,minimum_detectable_effect,alpha,power,cohens_h,required_n_per_arm,required_total_n,actual_n_per_arm,adequately_powered
+0.54,0.62,0.08,0.05,0.8,0.1622802710053044,470,940,1000,True

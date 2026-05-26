@@ -1,0 +1,16 @@
+,coefficient,abs_coefficient,direction
+engagement_score_day7,-0.6409980132432778,0.6409980132432778,reduces churn risk
+days_to_first_lab,0.22229963817360343,0.22229963817360343,increases churn risk
+subscription_plan_Standard,0.1884124231696543,0.1884124231696543,increases churn risk
+baseline_testosterone_level,0.16631851296228287,0.16631851296228287,increases churn risk
+prior_telehealth_experience,-0.15432243223376632,0.15432243223376632,reduces churn risk
+treatment_goal_Energy,0.10797156379333618,0.10797156379333618,increases churn risk
+testosterone_tier_Low-Normal,-0.09886999516275415,0.09886999516275415,reduces churn risk
+testosterone_tier_Low,-0.09540175542295351,0.09540175542295351,reduces churn risk
+support_contacts_30d,0.04257288086242956,0.04257288086242956,increases churn risk
+age_group_45-54,0.028724002234090076,0.028724002234090076,increases churn risk
+age_group_35-44,-0.024229690428247838,0.024229690428247838,reduces churn risk
+treatment_goal_General Wellness,-0.014724559226768451,0.014724559226768451,reduces churn risk
+age,-0.009946551027446005,0.009946551027446005,reduces churn risk
+treatment_goal_Libido,-0.008843007542899167,0.008843007542899167,reduces churn risk
+age_group_55-65,0.002878150757125487,0.002878150757125487,increases churn risk

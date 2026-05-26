@@ -1,0 +1,2 @@
+metric,control_n,treatment_n,control_successes,treatment_successes,control_rate,treatment_rate,absolute_lift,relative_lift,ci_lower,ci_upper,z_statistic,p_value,cohens_h,number_needed_to_treat
+adhered_90d,1000,1000,529,626,0.529,0.626,0.09699999999999998,0.18336483931947065,0.05391195092836063,0.14008804907163933,4.391039921126189,5.640491211017464e-06,0.196713830856734,11

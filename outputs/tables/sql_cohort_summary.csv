@@ -1,0 +1,3 @@
+experiment_arm,patient_count,adherence_rate_90d,churn_rate_30d,appointment_completion_rate_90d,avg_engagement_score_day7
+Control,1000,0.529,0.181,0.642,5.96
+Treatment,1000,0.626,0.156,0.705,5.93
