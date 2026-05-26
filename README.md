@@ -259,7 +259,7 @@ Health-AB-testing-retention/
 
 ---
 
-Limitations
+## Limitations
 
 This project uses synthetic data, so the results are illustrative rather than empirically validated on real patients. No real patient data, names, addresses, medical record numbers, or PHI are used.
 
@@ -273,7 +273,8 @@ The retained revenue estimate is illustrative only. It uses an assumed $150/mont
 
 ---
 
-Future Improvements
+## Future Improvements
+
 Run the experiment on real patient data with a pre-registered analysis plan.
 Explore survival analysis for time-to-churn modeling.
 Build an uplift model to estimate heterogeneous treatment effects for more precise targeting.
