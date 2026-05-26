@@ -226,3 +226,55 @@ Health-AB-testing-retention/
         ├── distributions.py
         ├── randomization.py
         └── generate_cohort.py
+
+
+---
+
+## Key Figures
+
+### 90-Day Adherence by Experiment Arm
+
+![Adherence by Arm](outputs/figures/adherence_by_arm.png)
+
+### Treatment Lift Confidence Interval
+
+![Adherence Lift Confidence Interval](outputs/figures/adherence_lift_confidence_interval.png)
+
+### Secondary Metrics by Arm
+
+![Secondary Metrics by Arm](outputs/figures/secondary_metrics_by_arm.png)
+
+### Subgroup Lift Heatmap
+
+![Subgroup Lift Heatmap](outputs/figures/subgroup_lift_heatmap.png)
+
+### Churn Model ROC Curve
+
+![ROC Curve](outputs/figures/roc_curve.png)
+
+### Churn Model Feature Importance
+
+![Feature Importance](outputs/figures/feature_importance.png)
+
+---
+
+Limitations
+
+This project uses synthetic data, so the results are illustrative rather than empirically validated on real patients. No real patient data, names, addresses, medical record numbers, or PHI are used.
+
+The primary A/B test supports a causal interpretation in this simulated setting because treatment assignment is randomized. However, a real-world rollout would require validation on actual patient data with a pre-registered analysis plan.
+
+Subgroup analyses are exploratory and subject to multiple-comparison risk. The strongest subgroup lifts should be treated as hypotheses for rollout monitoring or future experiments, not as independently confirmed treatment effects.
+
+The churn model is intentionally interpretable and uses logistic regression. More complex models may perform better on real-world data, but they would need careful validation, calibration checks, and monitoring before operational use.
+
+The retained revenue estimate is illustrative only. It uses an assumed $150/month subscription value and should not be interpreted as a real financial forecast.
+
+---
+
+Future Improvements
+Run the experiment on real patient data with a pre-registered analysis plan.
+Explore survival analysis for time-to-churn modeling.
+Build an uplift model to estimate heterogeneous treatment effects for more precise targeting.
+
+---
