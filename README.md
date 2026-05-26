@@ -1,40 +1,72 @@
 # Telehealth Patient Engagement A/B Testing and Churn Prediction Engine
 
-This project simulates a telehealth patient engagement experiment, evaluates the causal impact of personalized check-ins on 90-day adherence, predicts 30-day churn risk, and operationalizes results through SQL cohort analysis.
+A data science portfolio project that simulates a randomized telehealth patient engagement experiment, measures the causal effect of personalized check-ins on 90-day adherence, predicts 30-day churn risk, and operationalizes results through SQL cohort analysis.
+
+---
 
 ## Tech Stack
 
 Python · Pandas · NumPy · SciPy · Statsmodels · Scikit-learn · Matplotlib · Plotly · SQL · SQLite · Jupyter Notebook
 
+---
+
 ## Business Problem
 
-Telehealth subscription programs depend on patients staying engaged long enough to complete treatment protocols, attend follow-up appointments, and realize clinical benefit. Early disengagement creates both a clinical problem and a business retention problem. This project simulates how a data scientist could evaluate whether personalized weekly check-in messages improve patient adherence and identify which patients should be prioritized for proactive outreach.
+Telehealth subscription programs depend on patients staying engaged long enough to complete treatment protocols, attend follow-up appointments, and realize clinical benefit. Early disengagement creates both a clinical problem and a business retention problem.
+
+This project simulates a telehealth hormone optimization patient engagement workflow. It answers two business questions:
+
+1. Do personalized weekly check-in messages improve 90-day treatment adherence compared with generic weekly messages?
+2. Which patients are most likely to churn within 30 days, and how should the care team prioritize outreach?
+
+All data in this project is synthetic. No real patient data or PHI is used.
+
+---
 
 ## Approach
 
-### 1. Synthetic Patient Cohort
+### Phase 1 - Synthetic Cohort Generation
 
-Generated a fully synthetic 2,000-patient telehealth cohort with clinically grounded patient features, including age, testosterone tier, treatment goal, subscription plan, prior telehealth experience, lab completion delay, early engagement score, and support contact volume.
+Generated a 2,000-patient synthetic telehealth cohort with clinically grounded features, including age, testosterone tier, treatment goal, subscription plan, prior telehealth experience, days to first lab, day-7 engagement score, and support contact volume.
 
-All patient IDs are synthetic. No real patient data, names, addresses, member IDs, or PHI are used.
+Patients were randomized into Control and Treatment arms using stratified randomization across age group, treatment goal, and testosterone tier.
 
-### 2. A/B Experiment Analysis
+### Phase 2 - A/B Test Analysis
 
-Simulated a randomized A/B test comparing generic weekly messages against personalized weekly check-ins. The primary outcome was 90-day treatment adherence. The analysis included power analysis, randomization checks, a two-proportion z-test, confidence interval estimation, secondary metric testing with Bonferroni correction, and exploratory subgroup analysis.
+Analyzed a simulated randomized A/B test comparing generic weekly messaging against personalized weekly check-ins. The primary outcome was 90-day treatment adherence.
+
+The experiment analysis included:
+
+- Power analysis
+- Randomization balance checks
+- Two-proportion z-test for the primary outcome
+- 95% confidence interval for treatment lift
+- Number needed to treat
+- Bonferroni-corrected secondary metric analysis
+- Exploratory subgroup analysis
 
 Because treatment assignment is randomized, the primary A/B test supports a causal interpretation of the intervention effect in this simulated setting.
 
-### 3. Churn Prediction Model
+### Phase 3 - Churn Prediction Model
 
-Built an interpretable logistic regression model to predict 30-day churn risk using only pre-treatment and early patient-journey features. The model excluded experiment assignment and all downstream outcome variables to avoid leakage. The selected operating threshold prioritized recall so that the outreach workflow could catch a meaningful share of likely churners.
+Built an interpretable logistic regression model to predict 30-day churn risk using only pre-treatment and early patient-journey features.
 
-### 4. SQL Cohort Analysis
+The model excluded experiment arm and all downstream outcome variables to avoid leakage. The selected operating threshold prioritized recall so the care team could identify a meaningful share of likely churners for proactive outreach.
 
-Developed four SQL queries against a SQLite database to summarize experiment KPIs, analyze segment-level adherence, generate a ranked high-risk outreach list, and calculate rolling 7-day enrollment trends. These outputs connect the statistical and machine learning results to operational decision-making.
+### Phase 4 - SQL Cohort Analysis
+
+Developed four SQL queries against a SQLite database to translate analysis outputs into operational cohort views:
+
+- Experiment KPI summary by arm
+- Segment-level adherence by age group and treatment goal
+- Top 50 high-risk patient outreach list
+- Rolling 7-day enrollment trends
+
+---
 
 ## Key Results
 
-### Primary A/B Test Result
+### Primary A/B Test Result: 90-Day Treatment Adherence
 
 | Metric | Result |
 |---|---:|
@@ -46,7 +78,9 @@ Developed four SQL queries against a SQLite database to summarize experiment KPI
 | p-value | 0.000006 |
 | Number needed to treat | 11 |
 
-Personalized weekly check-ins significantly improved 90-day adherence. For every 11 patients receiving personalized check-ins, approximately one additional patient completed the 90-day treatment protocol.
+Personalized weekly check-ins significantly improved 90-day treatment adherence. For every 11 patients receiving personalized check-ins, approximately one additional patient completed the 90-day treatment protocol.
+
+---
 
 ### Secondary Metrics
 
@@ -54,11 +88,13 @@ Personalized weekly check-ins significantly improved 90-day adherence. For every
 |---|---:|---:|---:|---|
 | Appointment completion | 64.2% | 70.5% | +6.3 pp | Significant |
 | 30-day churn | 18.1% | 15.6% | -2.5 pp | Not significant |
-| Day-45 satisfaction | 3.55 | 3.85 | +0.30 | Significant |
+| Day-45 satisfaction | 3.55 | 3.85 | +0.30 points | Significant |
 
-### Exploratory Subgroup Findings
+Secondary outcomes supported the primary finding directionally. Appointment completion and satisfaction improved significantly. Thirty-day churn decreased, but the churn reduction was not statistically significant after multiple-comparison correction.
 
-The strongest exploratory adherence lifts appeared in:
+---
+
+### Strongest Exploratory Subgroup Lifts
 
 | Segment | Absolute Lift |
 |---|---:|
@@ -68,9 +104,11 @@ The strongest exploratory adherence lifts appeared in:
 | Energy treatment goal | +12.9 pp |
 | Premium subscription plan | +12.4 pp |
 
-These subgroup findings are exploratory and should be used for rollout prioritization or future experiment design, not as standalone confirmatory causal claims.
+These subgroup results are exploratory. They should be used for rollout monitoring and future experiment planning, not as standalone confirmatory causal claims.
 
-### Churn Model Performance
+---
+
+### Churn Prediction Model Performance
 
 | Metric | Result |
 |---|---:|
@@ -83,23 +121,21 @@ These subgroup findings are exploratory and should be used for rollout prioritiz
 | Recall | 0.6418 |
 | F1 | 0.4257 |
 
-The strongest churn-risk driver was low day-7 engagement. Longer time to first lab draw and Standard subscription plan status also increased predicted churn risk.
+The churn model achieved acceptable discrimination for an interpretable logistic regression model. The selected threshold was chosen to maintain recall above 0.60, making the model useful for patient-success outreach prioritization.
+
+---
 
 ### Full Cohort Risk Scoring
 
-| Risk Tier | Patient Count |
-|---|---:|
-| Low risk | 1,594 |
-| Medium risk | 388 |
-| High risk | 18 |
+| Risk Tier | Patient Count | Observed Churn Rate |
+|---|---:|---:|
+| Low risk | 1,594 | 9.1% |
+| Medium risk | 388 | 45.4% |
+| High risk | 18 | 88.9% |
 
-Observed churn increased sharply by risk tier:
+The model created meaningful separation between risk tiers. The High-risk group represented a small but highly concentrated set of patients for proactive care-team outreach.
 
-| Risk Tier | Observed Churn Rate |
-|---|---:|
-| Low risk | 9.1% |
-| Medium risk | 45.4% |
-| High risk | 88.9% |
+---
 
 ### Business Impact Estimate
 
@@ -111,16 +147,27 @@ Observed churn increased sharply by risk tier:
 
 Illustrative retained revenue estimate using an assumed $150/month subscription value.
 
+This is an illustrative estimate only and should not be interpreted as a real financial forecast.
+
+---
+
 ## Business Recommendation
 
-Roll out personalized check-ins in this simulated setting because the intervention produced a statistically significant and operationally meaningful lift in 90-day adherence. Prioritize monitoring and follow-up testing among high-response segments such as Low testosterone tier, Libido goal, Energy goal, and ages 35-44.
+In this simulated setting, personalized weekly check-ins should be advanced as the preferred engagement strategy because they produced a statistically significant and operationally meaningful improvement in 90-day adherence.
 
-Use the churn model to create a patient-success outreach queue. The model identifies 18 High-risk patients in the full cohort and can help prioritize care-team check-ins, lab reminders, and onboarding support.
+Recommended next actions:
+
+1. Roll out personalized check-ins with monitoring of adherence, appointment completion, churn, and satisfaction.
+2. Prioritize Low testosterone, Libido goal, Energy goal, and age 35-44 segments for follow-up testing because they showed the strongest exploratory lifts.
+3. Use the churn model to generate a recurring high-risk outreach list for care-team prioritization.
+4. Use SQL cohort outputs to monitor performance by arm, segment, risk tier, and enrollment trend.
+
+---
 
 ## Repository Structure
 
 ```text
-hone-health-ab-testing-retention/
+Health-AB-testing-retention/
 │
 ├── README.md
 ├── requirements.txt
@@ -136,7 +183,7 @@ hone-health-ab-testing-retention/
 │   ├── data_dictionary.md
 │   ├── findings_memo.md
 │   ├── resume_bullets.md
-│   └── architecture_diagram.png
+│   └── architecture_diagram.md
 │
 ├── notebooks/
 │   └── 01_ab_test_and_churn_analysis.ipynb
